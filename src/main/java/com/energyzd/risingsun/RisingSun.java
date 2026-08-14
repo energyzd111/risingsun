@@ -1,5 +1,8 @@
 package com.energyzd.risingsun;
 
+import com.energyzd.risingsun.block.ModBlocks;
+import com.energyzd.risingsun.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -31,6 +34,9 @@ public class RisingSun {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -44,7 +50,16 @@ public class RisingSun {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.MATCHA);
+        }
 
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.WHITE_SANDSTONE);
+            event.accept(ModBlocks.CHISELED_WHITE_SANDSTONE);
+            event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE);
+            event.accept(ModBlocks.CUT_WHITE_SANDSTONE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

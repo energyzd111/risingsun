@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "risingsun:block/white_sandstone_bottom",
+    "side": "risingsun:block/white_sandstone",
+    "top": "risingsun:block/white_sandstone_top"
+  }
+}
