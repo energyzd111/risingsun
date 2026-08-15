@@ -12,6 +12,9 @@ public class ModItems {
     public static final DeferredItem<Item> MATCHA = ITEMS.register("matcha",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> SWEETFISH = ITEMS.register("sweetfish",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SWEETFISH)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

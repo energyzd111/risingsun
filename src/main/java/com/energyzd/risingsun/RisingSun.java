@@ -54,11 +54,16 @@ public class RisingSun {
             event.accept(ModItems.MATCHA);
         }
 
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.MATCHA);
+        }
+
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.WHITE_SANDSTONE);
             event.accept(ModBlocks.CHISELED_WHITE_SANDSTONE);
             event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE);
             event.accept(ModBlocks.CUT_WHITE_SANDSTONE);
+            event.accept(ModBlocks.WHITE_SAND);
         }
     }
 

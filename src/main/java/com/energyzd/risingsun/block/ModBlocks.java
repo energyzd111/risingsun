@@ -12,6 +12,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import com.energyzd.risingsun.block.custom.WhiteSandBlock;
 
 import java.util.function.Supplier;
 
@@ -34,6 +35,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CUT_WHITE_SANDSTONE = registerBlock("cut_white_sandstone",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(0.8F).requiresCorrectToolForDrops().sound(SoundType.STONE).mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.BASEDRUM)));
+
+    public static final DeferredBlock<Block> WHITE_SAND = registerBlock("white_sand",
+            () -> new WhiteSandBlock(BlockBehaviour.Properties.of()
+                    .strength(0.5F).sound(SoundType.SAND).mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.SNARE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
